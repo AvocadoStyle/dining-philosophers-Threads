@@ -2,22 +2,21 @@ public class Main
 {
     public static void main(String[] args)
     {
-        Bank b1 = new Bank(10);
+    Monitor m1 = new Monitor();
 
-        Costumer[] costumers = new Costumer[5000];
+    Worker[] w = new Worker[20];
 
-        for(int i=0; i<5000; i++)
-        {
-            costumers[i] = new Costumer(i+1, b1);
-        }
+    for(int i=0; i<20; i++)
+    {
+        w[i] = new Worker(i+1, m1);
+    }
 
-        for(int i=0; i<5000; i++)
-        {
-            costumers[i].start();
-        }
-
-
+    for(int i=0; i<20; i++)
+    {
+        w[i].start();
+    }
 
 
     }
+
 }
