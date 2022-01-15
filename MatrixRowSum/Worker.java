@@ -12,10 +12,13 @@ public class Worker extends Thread
     public void run()
     {
         int[] row = m.giveRowToWorker();
-        int sumOfRow = 0;
-        for(int i=0; i<row.length; i++)
-            sumOfRow += row[i];
-        m.bringSumOfLineFromWorker(sumOfRow);
+        while(row != null) {
+            int sumOfRow = 0;
+            for (int i = 0; i < row.length; i++)
+                sumOfRow += row[i];
+            m.bringSumOfLineFromWorker(sumOfRow);
+            row = m.giveRowToWorker();
+        }
     }
 
 }

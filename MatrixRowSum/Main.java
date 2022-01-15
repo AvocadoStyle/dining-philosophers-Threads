@@ -8,11 +8,7 @@ public class Main
         w1.start();
         w2.start();
         w3.start();
-        try {
-            Thread.sleep(2000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+
         System.out.println(m1.getTotalSum());
 
     }
